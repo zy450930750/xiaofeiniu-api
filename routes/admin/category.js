@@ -16,8 +16,7 @@ module.exports = router;
 router.get('/', (req, res) => {
   pool.query('SELECT * FROM xfn_category ORDER BY cid', (err, result) => {
     if (err) throw err;
-    var jsonData = JSON.stringify(result);
-    res.send('doData(' + jsonData + ')');
+    res.send(result);
   })
 })
 
